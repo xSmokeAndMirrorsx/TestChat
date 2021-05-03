@@ -41,7 +41,7 @@ function loginForm(){
         <meta charset="utf-8" />
  
         <title>Tuts+ Chat Application</title>
-        <meta name="description" content="Tuts+ Chat Application" />
+        <meta name="description" content="WROTTiT" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
@@ -51,6 +51,14 @@ function loginForm(){
     }
     else {
     ?>
+         #Header and Name Div
+         <div class="a" style="background-color:dimgrey ">
+            <h1 class="multicolor" style="color:white;">WROTiTT</h1>
+            <h2 class="multicolor" id="uName"><?php echo $_SESSION['name']; ?></h2>
+            <p></p>
+        </div>
+     
+     
         <div id="wrapper">
             <div id="menu">
                 <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
