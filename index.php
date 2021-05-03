@@ -52,7 +52,7 @@ function loginForm(){
     else {
     ?>
          #Header and Name Div
-         <div class="a" style="background-color:dimgrey ">
+         <div class="cent" style="background-color:dimgrey ">
             <h1 class="multicolor" style="color:white;">WROTiTT</h1>
             <h2 class="multicolor" id="uName"><?php echo $_SESSION['name']; ?></h2>
             <p></p>
