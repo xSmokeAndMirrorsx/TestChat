@@ -51,14 +51,33 @@ function loginForm(){
     }
     else {
     ?>
-         #Header and Name Div
+         <style>
+            div.cent{
+                text-align: center;
+            }
+         </style>
+     
+         <!--Header Div-->
          <div class="cent" style="background-color:dimgrey ">
             <h1 class="multicolor" style="color:white;">WROTiTT</h1>
-            <h2 class="multicolor" id="uName"><?php echo $_SESSION['name']; ?></h2>
+            <h2 class="multicolor" id="uName">Welcome, <?php echo $_SESSION['name']; ?></h2>
             <p></p>
         </div>
      
-     
+         <!-- Div containing 3 vertical divs -->
+    <div style="background-color:dimgrey; min-height:100%">
+      <!-- Social Div -->
+      <div class ="cent" style="display: inline-block; *display: inline; width: 19%; background-color: slategrey; vertical-align: top;">
+        <div class ="cent" style="background-color: grey;">
+            <h2 class ="multicolor">Social: Friends & Events</h2>
+        </div>
+            <h3 id = "correct_count">Friends Yay</h3>
+            <h2 id = "correct"></h2>
+            <!-- <ul id = "correct-answers"></ul> -->
+      </div>
+      
+      <!-- Posting and Feed div -->
+      <div class ="cent" style = "display: inline-block; *display: inline; width: 60%; background-color: silver; vertical-align: top;">
         <div id="wrapper">
             <div id="menu">
                 <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
@@ -79,6 +98,19 @@ function loginForm(){
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
         </div>
+       
+      <!-- Profile Options Div -->
+      <div class ="cent" style="display: inline-block; *display: inline; width: 19%; background-color: slategrey; vertical-align: top; height: 100%;">
+        <div class="cent" style="background-color: grey;">
+          <h2 class ="multicolor">User: Profile and Options</h2>
+            </div>
+	       <h3 id = "profName"><?php echo $_SESSION['name']; ?>'s Profile Settings</h3>
+        <p></p>
+        Customize Word Color: <input type = "color" id = "wordColor">
+      </div>
+          
+    </div>
+       
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
@@ -117,6 +149,20 @@ function loginForm(){
                     }
                 });
             });
+         
+                 //function used to change the color of the headers based on user input
+        var changeColorHandler = function (evt){
+            let mycolor = evt.currentTarget.value
+            var elements = document.getElementsByClassName("multicolor");
+            for(var i=0; i<elements.length; i++){
+              elements[i].style.color = mycolor;
+            }
+        }
+        
+        document.querySelector("#wordColor").addEventListener(
+            "change",
+            changeColorHandler
+        )
         </script>
     </body>
 </html>
