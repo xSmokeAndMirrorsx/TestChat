@@ -124,7 +124,7 @@ function loginForm(){
                     $("#usermsg").val("");
                     return false;
                 });
- 
+		    
                 function loadLog() {
                     var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
  
