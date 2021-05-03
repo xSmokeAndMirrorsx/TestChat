@@ -3,8 +3,8 @@ session_start();
 if(isset($_SESSION['name'])){
     $text = $_POST['text'];
     $idnum = $_POST['idnum'];
-    $likeID = "like_".$idnum."_txt";
-    $likebuttonID = "like_".$idnum;
+    $likeID = "like_".$idnum;
+    $likebuttonID = "likeB_".$idnum;
     $commentID = "comment_".$idnum."_txt";
     $commentbuttonID = "comment_".$idnum;
      
