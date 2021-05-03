@@ -98,7 +98,7 @@ function loginForm(){
                 <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
         </div>
-       
+      </div>
       <!-- Profile Options Div -->
       <div class ="cent" style="display: inline-block; *display: inline; width: 19%; background-color: slategrey; vertical-align: top; height: 100%;">
         <div class="cent" style="background-color: grey;">
