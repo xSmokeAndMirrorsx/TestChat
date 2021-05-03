@@ -114,10 +114,13 @@ function loginForm(){
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
+	    	var postCount = 0;
+		
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
+		    postCount = postCount + 1;
                     var clientmsg = $("#usermsg").val();
-                    $.post("post.php", { text: clientmsg });
+                    $.post("post.php", { text: clientmsg, idnum: postCount });
                     $("#usermsg").val("");
                     return false;
                 });
@@ -140,7 +143,7 @@ function loginForm(){
                     });
                 }
  
-                setInterval (loadLog, 2500);
+                setInterval (loadLog, 2000);
  
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to end the session?");
