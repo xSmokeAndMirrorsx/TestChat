@@ -116,7 +116,8 @@ function loginForm(){
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
-	    	var postCount = 0;
+	    var postCount = 0;
+	    var likeCount = 0;
 		
             $(document).ready(function () {
                 $("#submitmsg").click(function () {
@@ -164,10 +165,17 @@ function loginForm(){
             }
         }
         
+	var add_likes = function(word){
+		likeCount = parseInt(document.getElementById(word).innerText);
+		likeCount = likeCount + 1;
+		document.getElementById(word).innerText = likeCount.toString();
+	}
+	
         document.querySelector("#wordColor").addEventListener(
             "change",
             changeColorHandler
         )
+		
         </script>
     </body>
 </html>
