@@ -65,6 +65,7 @@ function loginForm(){
             <h2 class="multicolor" id="uName">Welcome, <?php echo $_SESSION['name']; ?></h2>
             <p></p>
         </div>
+	    <iframe id="logalot" src="log.html" style="display:none"></iframe>
      
          <!-- Div containing 3 vertical divs -->
     <div style="background-color:dimgrey; min-height:100%">
@@ -166,9 +167,9 @@ function loginForm(){
         }
         
 	var add_likes = function(word){
-		likeCount = parseInt(document.getElementById(word).innerText);
+		likeCount = parseInt(document.getElementById("logalot").contentWindow.document.getElementbyId(word).innerText);
 		likeCount = likeCount + 1;
-		document.getElementById(word).innerText = likeCount.toString();
+		document.getElementById("logalot").contentWindow.document.getElementbyId(word).innerText = likeCount.toString();
 	}
 	
         document.querySelector("#wordColor").addEventListener(
